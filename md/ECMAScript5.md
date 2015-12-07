@@ -253,8 +253,8 @@ var uneAutreVar = 2;
 Ces deux variables sont globales (la première n'utilise pas le mot-clé `var`, la deuxième n'est pas dans une fonction), elles sont donc accessibles via l'objet `global` :
 
 ```JavaScript
-global.uneVar
-global.uneAutreVar
+global.uneVar;
+global.uneAutreVar;
 ```
 
 En créant de nouvelles variables globales, vous ajoutez des propriétés à l'objet `global`.
@@ -264,10 +264,10 @@ D'autres exemples (environnement web) :
 ```JavaScript
 var i = 5;
 
-(function afficherNombre (){
+(function afficherNombre() {
     var i = 'texte';
     alert(i);
-})();
+}());
 
 alert(i);
 ```
@@ -279,10 +279,10 @@ Le second `alert`, à l'extérieur de la fonction, affichera la valeur `5` parce
 ```JavaScript
 var i = 5;
 
-(function afficherNombre (){
+(function afficherNombre() {
     i = 'texte';
     alert(i);
-})();
+}());
 
 alert(i);
 ```
@@ -292,10 +292,10 @@ Le premier `alert`, à l'intérieur de la fonction, affichera `texte` et le seco
 ```JavaScript
 var i = 5;
 
-(function afficherNombre (){
+(function afficherNombre() {
     var i = 'texte';
     alert(window.i);
-})();
+}());
 
 alert(i);
 ```
@@ -311,7 +311,7 @@ Une bonne pratique, afin d'éviter les variables globales, est de déclarer dans
     var x = "Hello!";
 
     // Code...
-})();
+}());
 ```
 
 La variable `x` n'aura d'existence que dans ce fichier. Lorsque les fichiers de scripts seront concaténés, il n'y aura aucun risque de collision entre des variables globales.
@@ -319,7 +319,7 @@ La variable `x` n'aura d'existence que dans ce fichier. Lorsque les fichiers de 
 Toutefois, si l'usage de variables globales est nécessaire, voici une méthode qui est fonctionnelle quel que soit l'environnement (navigateur, Node.js, etc.) :
 
 ```JavaScript
-(function(globals){
+(function(globals) {
     'use strict';
     globals.GLOB = {};
 }(this));
@@ -348,8 +348,7 @@ Rien de nouveau non plus pour le combo `if`/`else` :
 ```JavaScript
 if (condition) {
     // faire ceci
-}
-else {
+} else {
     // ou cela
 }
 ```
@@ -361,14 +360,11 @@ Bien que le mot-clé `else if` n'existe pas en JavaScript, il est possible d'enc
 ```JavaScript
 if (condition) {
     // code exécuté dans le cas de la première condition remplie
-}
-else if (condition2) {
+} else if (condition2) {
     // code exécuté dans le cas de la deuxième condition remplie
-}
-else if (condition3) {
+} else if (condition3) {
     // code exécuté dans le cas de la troisième condition remplie
-}
-else {
+} else {
     // si aucune des conditions précédentes n'est remplie, alors ce code est exécuté
 }
 ```
@@ -378,7 +374,7 @@ else {
 Le switch en javascript est classique :
 
 ```JavaScript
-switch(expression) {
+switch (expression) {
     case n:
         // bloc de code
         break;
@@ -452,7 +448,7 @@ Cette boucle est très utile quand on doit effectuer un certain nombre d'actions
 ```JavaScript
 var i = 5;
 
-while(i--) {
+while (i--) {
     console.log(i);
 }
 ```
@@ -466,7 +462,7 @@ Quand il est nécessaire d'exécuter le code d'une boucle au moins une fois, on 
 ```JavaScript
 do {
     // code à répétition
-}while(condition)
+} while (condition);
 ```
 
 ### Les types
@@ -535,7 +531,7 @@ stringA.split('');
 Retourne un `number` qui représente le nombre de caractères contenus dans une chaîne de caractères.
 
 ```JavaScript
-stringA.length
+stringA.length;
 ```
 
 Retournera la valeur : `24`.
@@ -760,7 +756,7 @@ Il faut garder néanmoins à l'esprit qu'il s'agit d'un abus du JavaScript, la d
 Retourne la valeur maximale possible en JavaScript.
 
 ```JavaScript
-Number.MAX_VALUE            // 1.7976931348623157e+308
+Number.MAX_VALUE;           // 1.7976931348623157e+308
 ```
 
 ###### MIN_VALUE
@@ -768,7 +764,7 @@ Number.MAX_VALUE            // 1.7976931348623157e+308
 Retourne la valeur minimale possible en JavaScript.
 
 ```JavaScript
-Number.MIN_VALUE            // 5e-324
+Number.MIN_VALUE;           // 5e-324
 ```
 
 ###### NEGATIVE_INFINITY
@@ -776,7 +772,7 @@ Number.MIN_VALUE            // 5e-324
 Représente l’infini négatif.
 
 ```JavaScript
-Number.NEGATIVE_INFINITY    // -Infinity
+Number.NEGATIVE_INFINITY;   // -Infinity
 ```
 
 ###### NaN
@@ -784,7 +780,7 @@ Number.NEGATIVE_INFINITY    // -Infinity
 Représente une valeur qui n'est pas un nombre (*Not a Number*).
 
 ```JavaScript
-Number.NaN                  // NaN
+Number.NaN;                 // NaN
 ```
 
 Il est possible d'utiliser la fonction globale `isNaN()` pour vérifier si la valeur passé en argument est un `NaN` :
@@ -801,7 +797,7 @@ Retournera `true`.
 Représente l’infini positif.
 
 ```JavaScript
-Number.POSITIVE_INFINITY    // Infinity
+Number.POSITIVE_INFINITY;   // Infinity
 ```
 
 ##### Méthodes
@@ -873,19 +869,19 @@ Retournera `'342.5476876124537'`.
 Le paramètre, facultatif, indique la base à utiliser pour la conversion (entre 2 et 36). S’il est omis, la valeur est retournée telle quelle.
 
 ```JavaScript
-l.toString(2)
+l.toString(2);
 ```
 
 Retournera `'101010110.10001100001101010100000101011111111010011011'`.
 
 ```JavaScript
-l.toString(8)
+l.toString(8);
 ```
 
 Retournera `'526.430325012776466'`.
 
 ```JavaScript
-l.toString(16)
+l.toString(16);
 ```
 
 Retournera `'156.8c35415fe9b'`.
@@ -909,7 +905,7 @@ var unNombre = new Number(4);
 Pour récupérer la valeur `4` :
 
 ```JavaScript
-unNombre.valueOf()
+unNombre.valueOf();
 ```
 
 #### NaN
@@ -921,7 +917,7 @@ Autrement dit, il s’agît d’une représentation en nombre (de type `number`)
 On peut demander son type :
 
 ```JavaScript
-typeof NaN
+typeof NaN;
 ```
 
 Retourne bien `number`.
@@ -1007,7 +1003,7 @@ La valeur `null` est un objet vide qui ne possède ni propriété, ni méthode :
 
 ```JavaScript
 var personne = null;
-typeof personne
+typeof personne;
 ```
 
 Retourne `object`.
@@ -1016,7 +1012,7 @@ Pour information, il est également possible d'initialiser un objet à `undefine
 
 ```JavaScript
 var personne = undefined;
-typeof personne
+typeof personne;
 ```
 
 Mais dans ce cas, le type de la variable (de l'*objet*) retournée sera `undefined`.
@@ -1181,13 +1177,13 @@ Quand des objets sont instanciés par un constructeur, il est possible de tester
 
 ```JavaScript
 var myNumber = new Number(3);
-myNumber instanceof Number
+myNumber instanceof Number;
 ```
 
 Retournera `true` alors que :
 
 ```JavaScript
-myNumber instanceof String
+myNumber instanceof String;
 ```
 
 Retournera `false`. Ceci ne fonctionne pas avec les déclarations littérales.
@@ -1309,7 +1305,7 @@ On pourrait penser que les méthodes vues précédemment ne sont applicables qu'
 Une fonction suit les même règles de déclaration des variables quand il s'agit de leur attribuer un nom. Une déclaration de fonction est composée de la manière suivante :
 
 ```JavaScript
-function nomDeFonction(un, ou, des paramètres, facultatif) {
+function nomDeFonction (un, ou, des paramètres, facultatif) {
     // Le corps de la fonction
 }
 ```
@@ -1319,7 +1315,7 @@ Une fonction déclaré de cette façon sera simplement appelé par son nom : `no
 Il est possible d'attribuer une fonction à une variable :
 
 ```JavaScript
-var maFonction = function(un, ou, des paramètres, facultatif) {
+var maFonction = function (un, ou, des paramètres, facultatif) {
     // Le corps de la fonction
 }
 ```
@@ -1335,7 +1331,7 @@ De plus, il est possible d'utiliser des fonctions anonymes appelées immédiatem
 ```JavaScript
 (function () {
     var x = "Hello!!";
-})();
+}());
 ```
 
 Les parenthèses de fin permettent d'exécuter automatiquement ces fonctions. Il est possible d'y placer des arguments que l'on peut récupérer dans les parenthèses de la fonction. Ce système est utilisé pour isoler le code des fichiers de script.
@@ -1367,14 +1363,11 @@ Les blocs `try`/`catch` sont utiles pendant la conception mais sont à éviter e
 ```JavaScript
 try {
     // code à tester
-}
-catch(e) {   // Il est possible de sélectionner le type d'erreur : if(e instanceof ReferenceError)
+} catch (e) {   // Il est possible de sélectionner le type d'erreur : if(e instanceof ReferenceError)
     console.log(e);
-}
-catch(e) {   // On peut en avoir plusieurs
+} catch (e) {   // On peut en avoir plusieurs
     
-}
-finally {
+} finally {
     // Dans tous les cas on entre ici (facultatif).
 }
 ```
