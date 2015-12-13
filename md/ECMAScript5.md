@@ -1282,7 +1282,7 @@ var fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
 fruits.splice(0, 1);
 ```
 
-Le premier paramètre, `0`, définit la position où les nouveaux éléments doivent être ajoutés. Le second paramètre, `1`, définit combien d'éléments doivent être supprimés. Le reste des paramètres est omis, aucun élément ne sera ajouté.
+Le premier paramètre, `0`, définit la position à partir de laquelle les éléments doivent être supprimés. Le second paramètre, `1`, définit combien d'éléments doivent être supprimés.
 
 ###### toString()
 
