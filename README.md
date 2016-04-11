@@ -12,5 +12,6 @@ Ce document est sous licence [**Creative Commons**][] (CC BY-SA). Toute personne
 - kCell                                 	: écriture, documentation, tests
 - Jean-Baptiste Lacour, alias Moussaraser	: écriture, relecture, correction
 
+[JavaScript]: https://fr.wikipedia.org/wiki/JavaScript "JavaScript - Wikipedia"
 [**Creative Commons**]: http://creativecommons.org/licenses/by-sa/4.0/ "CC BY-SA"
 [GitHub]: https://github.com "GitHub - Site officiel"

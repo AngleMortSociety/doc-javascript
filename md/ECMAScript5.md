@@ -239,7 +239,7 @@ Afin d'éviter tout problème lié aux constantes, il est possible d'utiliser le
 
 Une variable déclarée au sein d'une fonction, avec le mot clé `var`, est une variable locale. Une telle variable prend vie au début de la fonction et est détruite à la sortie de celle-ci ; on dit alors que le scope (*portée* en français) de la variable est limité à la fonction. En JavaScript, seules les fonctions permettent de créer un nouveau scope.
 
-Dans tous les autres cas (variable déclarée en dehors de toute fonction ou sans le mot clé `var` ou les deux), la variable sera globale et donc accessible à tout moment dans le script. Il est à noter que l'utilisation de variables globales est une mauvaise pratique et que l'emploi du `use strict` posera problème lors de la validation du code.
+Dans tous les autres cas (variable déclarée en dehors de toute fonction ou sans le mot clé `var`), la variable sera globale et donc accessible à tout moment dans le script. Il est à noter que l'utilisation de variables globales est une mauvaise pratique et que l'emploi du `use strict` posera problème lors de la validation du code.
 
 Il n'est pas possible, comme dans d'autres langages, d'insérer un nouveau bloc avec des accolades `{}` afin de créer un nouveau scope. Cette pratique n'a aucun effet en JavaScript (ceci change quelque peu avec ECMAScript 6).
 
